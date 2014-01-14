@@ -1,8 +1,21 @@
-commit ba8ce8dad6c2c7f94cd872308e665e9f982f8f77
+commit 5659abe857aa859a811b2073846ef50ea520380e
 Author: Giannis <ichionid@gmail.com>
-Date:   Tue Jan 14 15:28:11 2014 +0100
+Date:   Tue Jan 14 15:45:00 2014 +0100
+
+    161th commit
+
+commit 30e24c19fd81fac88af2583bdfdfab883d1865aa
+Author: Giannis <ichionid@gmail.com>
+Date:   Tue Jan 14 15:44:54 2014 +0100
+
+    160th commit
+
+commit 0dca54bb45a8e33849fdf1556de7569a2573abac
+Author: Giannis <ichionid@gmail.com>
+Date:   Tue Jan 14 15:29:10 2014 +0100
 
     Version bump to 0.2.0
+
 
 commit bf9d6ddbbf7707663fa383263f72591259a1022c
 Author: Giannis <ichionid@gmail.com>
@@ -22,6 +35,11 @@ Date:   Tue Jan 14 15:27:40 2014 +0100
 
     153th commit
 
+commit a6ff0f005b484c52650abbb25657f65784a412f3
+Author: Giannis <ichionid@gmail.com>
+Date:   Tue Jan 14 15:20:39 2014 +0100
+
+    Version bump to 0.1.0
 
 commit 7e5e9cf06c26fd58544d1b8ba53a178ef7f37326
 Author: Giannis <ichionid@gmail.com>
@@ -29,23 +47,12 @@ Date:   Tue Jan 14 15:20:01 2014 +0100
 
     Version bump to 0.1.0
 
-commit b6627a362c343bd3b7f6e9da4a85383fa7e60936
-Author: Giannis <ichionid@gmail.com>
-Date:   Tue Jan 14 15:18:19 2014 +0100
-
-    Version bump to 0.1.0
 
 commit 0786f493a37927e28806cc1943239240be44dc14
 Author: Giannis <ichionid@gmail.com>
 Date:   Tue Jan 14 15:17:38 2014 +0100
 
     151th commit
-
-commit f9e16664c73eb0e81ad5a8f19044068db1b59f8e
-Author: Giannis <ichionid@gmail.com>
-Date:   Tue Jan 14 15:14:25 2014 +0100
-
-    150th commit
 
 
  - test28
