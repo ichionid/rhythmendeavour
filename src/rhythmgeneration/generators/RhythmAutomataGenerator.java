@@ -4,6 +4,7 @@
  */
 package rhythmgeneration.generators;
 
+import helpers.rhythmUtils;
 import java.util.ArrayList;
 
 
@@ -12,7 +13,6 @@ import java.util.ArrayList;
  * @author lebowski
  */
 public class RhythmAutomataGenerator {
-    
     /**
      * The function returns a pattern when either maxIterations or maxDistance
      * is reached.
@@ -30,12 +30,17 @@ public class RhythmAutomataGenerator {
      */
     public ArrayList<Boolean> voiceGenerator(ArrayList<Boolean> inputPattern, 
             ArrayList<String> rules, int maxIterations, int maxDistance ) {
-        ArrayList<Boolean> outputRhythm = new ArrayList();
-        outputRhythm = inputPattern;
+        ArrayList<Boolean> outputPattern = inputPattern;
+        rhythmUtils.printPattern(inputPattern);        
         for (int i = 0; i < maxIterations; i++) {
-            outputRhythm = generatePattern(outputRhythm, rules);
+            outputPattern = generatePattern(outputPattern, rules);
+            rhythmUtils.printPattern(outputPattern);
+            if (rhythmUtils.getDistance(inputPattern, outputPattern) 
+                    > maxDistance) {
+                break;
+            }
         }
-        return outputRhythm;
+        return outputPattern;
     }
     
     /**
@@ -49,7 +54,7 @@ public class RhythmAutomataGenerator {
      */    
     public ArrayList<Boolean> generatePattern(ArrayList<Boolean> inputPattern, 
             ArrayList<String> rules) {
-        ArrayList<Boolean> outputRhythm = new ArrayList();
+        ArrayList<Boolean> outputPattern = (ArrayList)inputPattern.clone();
         int neighborsSum;
         for (int i = 0; i < inputPattern.size(); i++) {
             neighborsSum = 0;
@@ -85,9 +90,9 @@ public class RhythmAutomataGenerator {
                     neighborsSum++;
                 }
             }
-            outputRhythm.set(i, calculateCellValue(inputPattern.get(i), neighborsSum, rules));
+            outputPattern.set(i, calculateCellValue(inputPattern.get(i), neighborsSum, rules));
         }
-        return outputRhythm;
+        return outputPattern;
     }
    /**
      * 

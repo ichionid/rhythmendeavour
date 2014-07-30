@@ -8,6 +8,7 @@ package rhythmendeavour;
 
 import helpers.rhythmUtils;
 import java.util.ArrayList;
+import rhythmgeneration.generators.RhythmAutomataGenerator;
 
 /**
  *
@@ -20,21 +21,23 @@ public class Rhythmendeavour {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList root = new ArrayList<Boolean>();
+        ArrayList<Boolean> root = new ArrayList();
+        root.add(true);
         root.add(true);
         root.add(false);
         root.add(true);
- 
-        ArrayList prod  = new ArrayList<Boolean>();
-        prod.add(false);
-        prod.add(false);
-        prod.add(false);
-        prod.add(false);
-        prod.add(true);
-        prod.add(false);
+        root.add(false);
+        root.add(false);
+        root.add(true);
+        root.add(false);
         
-        System.out.println(rhythmUtils.getDistance(root, prod));
-        
+        RhythmAutomataGenerator rag = new RhythmAutomataGenerator();
+        ArrayList<String> rules = new ArrayList();
+        rules.add("N");
+        rules.add("F");
+        rules.add("U");
+        rules.add("U");
+        rag.voiceGenerator(root, rules, 40, 30);
  
     }
     
