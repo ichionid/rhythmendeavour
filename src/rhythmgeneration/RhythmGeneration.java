@@ -4,6 +4,9 @@
  */
 package rhythmgeneration;
 
+import helpers.rhythmUtils;
+import java.util.ArrayList;
+
 /**
  *
  * @author lebowski

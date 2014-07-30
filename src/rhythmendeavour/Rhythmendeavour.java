@@ -6,6 +6,9 @@
 
 package rhythmendeavour;
 
+import helpers.rhythmUtils;
+import java.util.ArrayList;
+
 /**
  *
  * @author lebowski-8
@@ -17,6 +20,22 @@ public class Rhythmendeavour {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList root = new ArrayList<Boolean>();
+        root.add(true);
+        root.add(false);
+        root.add(true);
+ 
+        ArrayList prod  = new ArrayList<Boolean>();
+        prod.add(false);
+        prod.add(false);
+        prod.add(false);
+        prod.add(false);
+        prod.add(true);
+        prod.add(false);
+        
+        System.out.println(rhythmUtils.getDistance(root, prod));
+        
+ 
     }
     
 }
