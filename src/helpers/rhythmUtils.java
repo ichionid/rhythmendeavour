@@ -23,14 +23,20 @@ public class rhythmUtils {
      */
     public static int getDistance(ArrayList<Boolean> rootPattern, 
             ArrayList<Boolean> targetPattern) {
+
         int distance = 0;
+
         for (int i = 0; i < rootPattern.size(); i++) {
-            if( rootPattern.get(i)==true) {
-                // Find the closest onset
+
+            if (rootPattern.get(i)==true) {
+                // Find the closest onset. 2000 is a inapplicable distance
                 int tempDistance = 2000;
+
                 for (int j = 0; j < targetPattern.size(); j++) {
                   if (targetPattern.get(j)) {
+
                     int tTempDistance = Math.abs(i-j);
+
                     if (tTempDistance <= tempDistance) {
                         tempDistance  = tTempDistance;
                         if (tempDistance == 0 ) {

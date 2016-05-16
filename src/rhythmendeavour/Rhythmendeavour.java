@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package rhythmendeavour;
 
+import entities.Rhythm;
 import helpers.rhythmUtils;
 import java.util.ArrayList;
 import rhythmgeneration.generators.RhythmAutomataGenerator;
@@ -21,24 +21,42 @@ public class Rhythmendeavour {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<Boolean> root = new ArrayList();
-        root.add(true);
-        root.add(true);
-        root.add(false);
-        root.add(true);
-        root.add(false);
-        root.add(false);
-        root.add(true);
-        root.add(false);
+        ArrayList<Boolean> snareDrum = new ArrayList();
+        ArrayList<Boolean> hh = new ArrayList();
+        ArrayList<Boolean> bd = new ArrayList();
+        for (int i = 0; i < 4; i++) {
+            snareDrum.add(Boolean.FALSE);
+            snareDrum.add(Boolean.FALSE);
+            snareDrum.add(Boolean.TRUE);
+            snareDrum.add(Boolean.FALSE);
+            hh.add(Boolean.TRUE);
+            hh.add(Boolean.FALSE);
+            hh.add(Boolean.TRUE);
+            hh.add(Boolean.FALSE);
+            bd.add(Boolean.TRUE);
+            bd.add(Boolean.FALSE);
+            bd.add(Boolean.FALSE);
+            bd.add(Boolean.FALSE);
+        }
+        Rhythm rhythm = new Rhythm();
+        rhythm.setBassDrum(bd);
+        rhythm.setHighHat(hh);
+        rhythm.setSnare(snareDrum);
         
-        RhythmAutomataGenerator rag = new RhythmAutomataGenerator();
+        
+        // Rhythm automata will generate a groove for every different voice.
+        /*RhythmAutomataGenerator rag = new RhythmAutomataGenerator();
         ArrayList<String> rules = new ArrayList();
         rules.add("N");
         rules.add("F");
         rules.add("U");
         rules.add("U");
-        rag.voiceGenerator(root, rules, 40, 30);
- 
+        rag.setRules(rules);
+        rag.setMaxDistance(10);
+        rag.setMaxIterations(1);*/
+        //rag.generate(root);
+        //Map<String, Integer> aMap = new HashMap<String, Integer>();
+        //aMap.put("a" , Integer.valueOf(1));
     }
-    
+
 }
