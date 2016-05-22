@@ -1,1 +1,6 @@
 build/*
+build.xml
+dist/*
+libraries/*
+manifest.mf
+nbproject/*

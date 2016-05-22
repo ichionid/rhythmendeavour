@@ -4,14 +4,15 @@
  */
 package rhythmgeneration.generators;
 
-import helpers.rhythmUtils;
+import helpers.RhythmUtils;
 import java.util.ArrayList;
+import rhythmgeneration.interfaces.Generator;
 
 /**
  *
  * @author lebowski
  */
-public class RhythmAutomataGenerator {
+public class RhythmAutomataGenerator implements Generator {
 
     private ArrayList<String> rules;
     private int maxIterations;
@@ -42,6 +43,7 @@ public class RhythmAutomataGenerator {
     }
 
     /**
+     * @Override
      * The function returns a pattern when either maxIterations or maxDistance
      * is reached.
      *
@@ -53,12 +55,12 @@ public class RhythmAutomataGenerator {
      */
     public ArrayList<Boolean> generate(ArrayList<Boolean> inputPattern) {
         ArrayList<Boolean> outputPattern = inputPattern;
-        rhythmUtils.printPattern(inputPattern);
+        RhythmUtils.printPattern(inputPattern);
         System.out.println("Startig to iterate(Max iterations:" + this.maxIterations + ")");
         for (int i = 0; i < this.maxIterations; i++) {
             outputPattern = generatePattern(outputPattern, this.rules);
-            rhythmUtils.printPattern(outputPattern);
-            if (rhythmUtils.getDistance(inputPattern, outputPattern)
+            RhythmUtils.printPattern(outputPattern);
+            if (RhythmUtils.getDistance(inputPattern, outputPattern)
                     > this.maxDistance) {
                 break;
             }

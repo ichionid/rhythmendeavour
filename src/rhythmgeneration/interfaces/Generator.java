@@ -12,5 +12,5 @@ import rhythmgeneration.generators.*;
  * @author lebowski
  */
 public interface Generator {
-   public void generate(ArrayList<Boolean> inputPattern);
+   public ArrayList<Boolean> generate(ArrayList<Boolean> inputPattern);
 }

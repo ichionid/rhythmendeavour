@@ -6,8 +6,9 @@
 package rhythmendeavour;
 
 import entities.Rhythm;
-import helpers.rhythmUtils;
+import helpers.RhythmUtils;
 import java.util.ArrayList;
+import rhythmgeneration.generators.EuclideanGenerator;
 import rhythmgeneration.generators.RhythmAutomataGenerator;
 
 /**
@@ -21,7 +22,7 @@ public class Rhythmendeavour {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<Boolean> snareDrum = new ArrayList();
+        /*ArrayList<Boolean> snareDrum = new ArrayList();
         ArrayList<Boolean> hh = new ArrayList();
         ArrayList<Boolean> bd = new ArrayList();
         for (int i = 0; i < 4; i++) {
@@ -42,7 +43,27 @@ public class Rhythmendeavour {
         rhythm.setBassDrum(bd);
         rhythm.setHighHat(hh);
         rhythm.setSnare(snareDrum);
-        
+        */
+        EuclideanGenerator e = new EuclideanGenerator();
+        //XooXo XooXo Xoo
+        System.out.println("Expected: Xo");
+        RhythmUtils.printPattern(e.generate(1, 1));
+        System.out.println("Expected: Xoo");
+        RhythmUtils.printPattern(e.generate(1, 2));
+        System.out.println("Expected: Xooo");
+        RhythmUtils.printPattern(e.generate(1, 3));
+        System.out.println("Expected: XooXooXooXoo");
+        RhythmUtils.printPattern(e.generate(4, 8));
+        System.out.println("Expected: XoX");
+        RhythmUtils.printPattern(e.generate(2, 1));
+        System.out.println("Expected: XoXoo");
+        RhythmUtils.printPattern(e.generate(2, 3));
+        System.out.println("Expected: XoXX");
+        RhythmUtils.printPattern(e.generate(3, 1));
+        System.out.println("Expected: XoXoX");
+        RhythmUtils.printPattern(e.generate(3, 2));
+        System.out.println("Expected: XoXoXoo");
+        RhythmUtils.printPattern(e.generate(3, 4));
         
         // Rhythm automata will generate a groove for every different voice.
         /*RhythmAutomataGenerator rag = new RhythmAutomataGenerator();
